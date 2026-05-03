@@ -1,0 +1,10 @@
+[build]
+  publish = "."
+  functions = "netlify/functions"
+
+# 브라우저는 /api/... 로 요청하고, Netlify가 서버리스 함수로 넘깁니다.
+[[redirects]]
+  from = "/api/*"
+  to = "/.netlify/functions/local-v-api/:splat"
+  status = 200
+  force = true
