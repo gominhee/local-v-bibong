@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>점포 상세 | 로컬-V</title>
+    <link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin />
+    <link rel="preconnect" href="https://images.unsplash.com" crossorigin />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable-dynamic-subset.min.css"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Noto+Serif+KR:wght@500;700&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Black+Han+Sans&family=Do+Hyeon&family=Nanum+Pen+Script&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="css/base.css" />
+    <link rel="stylesheet" href="css/themes.css" />
+    <link rel="stylesheet" href="css/chat-widget.css" />
+  </head>
+  <body>
+    <header class="site-header">
+      <div class="inner">
+        <a href="index.html" class="brand">로컬-V비봉상권 <span>소상공인 디지털 전환 웹 서비스</span></a>
+        <a href="index.html" class="nav-home">← 목록</a>
+      </div>
+    </header>
+
+    <section class="store-hero">
+      <div class="wrap store-hero-wrap">
+        <p id="store-badge" class="badge"></p>
+        <div class="store-hero-title-row">
+          <img
+            id="store-hero-thumb"
+            class="store-hero-thumb"
+            alt=""
+            width="96"
+            height="96"
+            decoding="async"
+            hidden
+          />
+          <h1 id="store-title"></h1>
+        </div>
+        <p id="store-tagline" class="tagline"></p>
+        <p id="store-accent" class="accent-line"></p>
+      </div>
+      <div id="store-hero-boss-strip" class="store-hero-boss-strip" hidden></div>
+    </section>
+
+    <main class="wrap store-main-detail">
+      <div class="detail-grid detail-grid--store">
+        <div class="panel panel--store-info">
+          <h3>안내</h3>
+          <div id="panel-info"></div>
+          <div id="panel-boss-interview" class="store-boss-interview" hidden></div>
+          <div id="store-picks-block" class="store-picks-block" hidden>
+            <h4 class="store-picks-title">프로젝트 추천 포인트</h4>
+            <div id="store-picks-inner" class="chips"></div>
+          </div>
+        </div>
+        <div class="panel panel--store-offer store-panel-side">
+          <h3>대표 메뉴</h3>
+          <div id="panel-menu" class="chips"></div>
+          <div id="ref-block" class="store-ref-block"></div>
+        </div>
+      </div>
+
+      <section class="panel store-reviews-section" aria-labelledby="store-reviews-heading">
+        <h3 id="store-reviews-heading">학생 후기</h3>
+        <div class="store-reviews-section-inner">
+          <div class="store-reviews-col-form">
+            <p id="store-reviews-lead" class="store-reviews-lead">방문·포장 경험을 짧게 남겨 주세요.</p>
+            <form id="store-review-form" class="store-review-form" autocomplete="on">
+              <label class="sr-only" for="store-review-author">닉네임</label>
+              <input
+                id="store-review-author"
+                name="author"
+                type="text"
+                maxlength="24"
+                placeholder="닉네임 (예: 비봉고 2학년)"
+                required
+              />
+              <label class="sr-only" for="store-review-body">후기</label>
+              <textarea
+                id="store-review-body"
+                name="body"
+                rows="3"
+                maxlength="800"
+                placeholder="맛·가격·분위기 등 솔직한 한줄 후기를 적어 주세요."
+                required
+              ></textarea>
+              <button type="submit" class="store-review-submit">후기 남기기</button>
+              <p id="store-review-msg" class="store-review-msg" role="status" aria-live="polite"></p>
+            </form>
+          </div>
+          <div class="store-reviews-col-list">
+            <p class="store-reviews-list-heading">등록된 후기</p>
+            <div id="store-reviews-list" class="store-reviews-list"></div>
+          </div>
+        </div>
+      </section>
+
+      <div id="store-interview-block" class="store-interview-block" hidden></div>
+    </main>
+
+    <footer class="site-footer">
+      로컬-V · 협력 점포 인터뷰 후 정보를 다듬어 주세요 · QR은 추후 매장별로 연결
+    </footer>
+
+    <div
+      id="chat-widget-panel"
+      class="chat-widget-panel"
+      role="dialog"
+      aria-label="로컬-V 챗봇"
+      aria-modal="false"
+    >
+      <div class="chat-widget-head">
+        <div>
+          <h2>로컬-V 안내</h2>
+          <p>이 점포·비봉면 상권 질문을 도와드려요. (AI 답변 · 영업 정보는 매장 확인)</p>
+        </div>
+        <button type="button" id="chat-widget-close" class="chat-widget-close" aria-label="닫기">
+          ×
+        </button>
+      </div>
+      <div id="chat-widget-error" class="chat-widget-error" hidden></div>
+      <div id="chat-widget-messages" class="chat-widget-messages"></div>
+      <div class="chat-widget-foot">
+        <textarea
+          id="chat-widget-input"
+          rows="2"
+          placeholder="예: 이 가게 대표 메뉴 추천해 줘"
+          maxlength="2000"
+        ></textarea>
+        <button type="button" id="chat-widget-send" class="chat-widget-send">전송</button>
+      </div>
+    </div>
+    <button
+      type="button"
+      id="chat-widget-toggle"
+      class="chat-widget-toggle"
+      aria-label="챗봇 열기"
+      aria-expanded="false"
+      aria-controls="chat-widget-panel"
+    >
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+        <path
+          fill-rule="evenodd"
+          d="M4.848 2.771A49.144 49.144 0 0112 2.25c2.43 0 4.784.424 7.002 1.274l.002.001V9.25a8.25 8.25 0 01-4.326 7.251v2.965a.75.75 0 01-1.155.563l-2.718-2.035-1.443 1.443a.75.75 0 01-1.06 0L3.75 16.5v-4.563A8.25 8.25 0 014.848 9.25V4.771z"
+          clip-rule="evenodd"
+        />
+      </svg>
+    </button>
+
+    <script src="js/stores.js"></script>
+    <script src="js/store-page.js"></script>
+    <script src="js/store-reviews.js"></script>
+    <script src="js/chat-widget.js"></script>
+  </body>
+</html>

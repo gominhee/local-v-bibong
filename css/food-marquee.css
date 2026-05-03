@@ -1,0 +1,77 @@
+/* 메인 상단 — 음식 이미지 무한 가로 스크롤 (외부 이미지 URL 사용) */
+
+.food-marquee-section {
+  width: 100%;
+  margin: 0;
+  padding: 0;
+  border-bottom: 1px solid rgba(15, 23, 42, 0.06);
+  background: linear-gradient(180deg, #f8fafc 0%, #f1f5f9 100%);
+  overflow: hidden;
+}
+
+.food-marquee {
+  max-width: 100%;
+  padding: 0.55rem 0 0.45rem;
+}
+
+.food-marquee-track {
+  display: flex;
+  width: max-content;
+  /* 왼쪽에서 오른쪽으로 흐르는 느낌(역방향 무한 스크롤) */
+  animation: food-marquee-scroll 55s linear infinite reverse;
+  will-change: transform;
+}
+
+@keyframes food-marquee-scroll {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
+}
+
+.food-marquee-row {
+  display: flex;
+  flex-shrink: 0;
+  align-items: stretch;
+  gap: 0.75rem;
+  padding: 0 0.5rem;
+}
+
+.food-marquee-row img {
+  width: 200px;
+  height: 130px;
+  object-fit: cover;
+  border-radius: 10px;
+  box-shadow: 0 4px 14px rgba(15, 23, 42, 0.1);
+  flex-shrink: 0;
+  background: #e2e8f0;
+}
+
+@media (min-width: 768px) {
+  .food-marquee-row img {
+    width: 260px;
+    height: 160px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .food-marquee-track {
+    animation: none;
+    justify-content: center;
+    flex-wrap: wrap;
+    width: 100%;
+    max-width: 1100px;
+    margin: 0 auto;
+  }
+
+  .food-marquee-row[aria-hidden="true"] {
+    display: none;
+  }
+
+  .food-marquee-row {
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+}

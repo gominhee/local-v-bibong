@@ -1,0 +1,956 @@
+/* 로컬-V — 공통 레이아웃 · 타이포 */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+:root {
+  --font-sans: "Pretendard Variable", Pretendard, -apple-system, BlinkMacSystemFont, system-ui, sans-serif;
+  --radius: 12px;
+  --shadow: 0 8px 32px rgba(15, 23, 42, 0.08);
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  font-family: var(--font-sans);
+  font-size: 1rem;
+  line-height: 1.6;
+  color: var(--text, #0f172a);
+  background: var(--bg, #f8fafc);
+  min-height: 100vh;
+}
+
+a {
+  color: var(--link, #2563eb);
+  text-decoration: none;
+}
+a:hover {
+  text-decoration: underline;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
+.wrap {
+  width: min(1100px, 92vw);
+  margin-inline: auto;
+  padding-block: 2rem 3rem;
+}
+
+.site-header {
+  padding: 1.25rem 0;
+  border-bottom: 1px solid var(--border, rgba(15, 23, 42, 0.08));
+  background: var(--header-bg, rgba(255, 255, 255, 0.85));
+  backdrop-filter: blur(10px);
+  position: sticky;
+  top: 0;
+  z-index: 10;
+}
+
+.site-header .inner {
+  width: min(1100px, 92vw);
+  margin-inline: auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  flex-wrap: wrap;
+}
+
+.brand {
+  font-weight: 800;
+  font-size: 1.15rem;
+  letter-spacing: -0.02em;
+  color: var(--brand, #0f172a);
+}
+.brand span {
+  opacity: 0.65;
+  font-weight: 600;
+  font-size: 0.85em;
+}
+
+/* 헤더 오른쪽 — 창업동아리 소개 링크 */
+.header-club-link {
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: inherit;
+  text-decoration: none;
+  opacity: 0.7;
+}
+.header-club-link:hover {
+  opacity: 1;
+  text-decoration: underline;
+}
+
+.header-club-current {
+  font-size: 0.85rem;
+  font-weight: 600;
+  opacity: 0.85;
+}
+
+.nav-home {
+  font-weight: 600;
+  font-size: 0.9rem;
+  padding: 0.5rem 0.9rem;
+  border-radius: 999px;
+  background: var(--nav-pill-bg, rgba(15, 23, 42, 0.06));
+  color: inherit;
+  text-decoration: none;
+}
+.nav-home:hover {
+  background: var(--nav-pill-hover, rgba(15, 23, 42, 0.12));
+  text-decoration: none;
+}
+
+.hero {
+  padding-block: 2.5rem 2rem;
+}
+
+.hero--center {
+  text-align: center;
+}
+
+.hero--center .lede,
+.hero--center .hero-insight {
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/* .hero .lede 의 margin: 0 보다 우선 — 본문 블록을 화면 가운데에 두고 글도 가운데 정렬 */
+.hero.hero--center .lede {
+  text-align: center;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.hero--center .disclaimer {
+  text-align: start;
+  max-width: none;
+}
+
+.hero h1 {
+  margin: 0 0 0.5rem;
+  font-size: clamp(1.75rem, 4vw, 2.35rem);
+  letter-spacing: -0.03em;
+  line-height: 1.2;
+}
+
+.hero .lede {
+  margin: 0;
+  font-size: 1.05rem;
+  line-height: 1.7;
+  opacity: 0.9;
+  max-width: 62ch;
+}
+
+.hero .lede strong {
+  font-weight: 700;
+  color: var(--brand, #0f172a);
+  opacity: 1;
+}
+
+.hero-insight {
+  margin: 1.15rem 0 0;
+  padding-left: 1rem;
+  border-left: 3px solid rgba(37, 99, 235, 0.35);
+  font-size: 0.98rem;
+  line-height: 1.65;
+  color: var(--text, #0f172a);
+  opacity: 0.88;
+  max-width: 58ch;
+}
+
+.hero--center .hero-insight {
+  padding-left: 1rem;
+  padding-right: 1rem;
+  border-left: none;
+  border-top: 3px solid rgba(37, 99, 235, 0.35);
+  padding-top: 1rem;
+  margin-top: 1.35rem;
+}
+
+.hero-insight strong {
+  font-weight: 700;
+  color: var(--brand, #0f172a);
+  opacity: 1;
+}
+
+.disclaimer {
+  margin-top: 1.5rem;
+  padding: 0.85rem 1rem;
+  font-size: 0.8rem;
+  line-height: 1.5;
+  border-radius: var(--radius);
+  background: var(--disclaimer-bg, rgba(251, 191, 36, 0.15));
+  border: 1px solid var(--disclaimer-border, rgba(245, 158, 11, 0.35));
+  color: var(--disclaimer-text, #78350f);
+}
+
+.store-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+  gap: 1.25rem;
+  margin-top: 2rem;
+}
+
+.store-card {
+  display: flex;
+  flex-direction: column;
+  border-radius: var(--radius);
+  overflow: hidden;
+  background: var(--card-bg, #fff);
+  border: 1px solid var(--card-border, rgba(15, 23, 42, 0.08));
+  box-shadow: var(--shadow);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+  text-decoration: none;
+  color: inherit;
+}
+
+.store-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 16px 40px rgba(15, 23, 42, 0.12);
+  text-decoration: none;
+}
+
+.store-card .thumb {
+  height: 120px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 2.5rem;
+  font-weight: 800;
+  letter-spacing: -0.05em;
+  color: #fff;
+  text-shadow: 0 2px 12px rgba(0, 0, 0, 0.2);
+}
+
+.store-card .body {
+  padding: 1.1rem 1.15rem 1.25rem;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+.store-card .cat {
+  font-size: 0.72rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  opacity: 0.7;
+  margin-bottom: 0.35rem;
+}
+
+.store-card h2 {
+  margin: 0 0 0.4rem;
+  font-size: 1.15rem;
+  letter-spacing: -0.02em;
+}
+
+.store-card .tagline {
+  margin: 0;
+  font-size: 0.88rem;
+  opacity: 0.8;
+  flex: 1;
+}
+
+.store-card .cta {
+  margin-top: 0.9rem;
+  font-size: 0.85rem;
+  font-weight: 700;
+  color: var(--link);
+}
+
+/* 상세 페이지 */
+.store-hero {
+  padding: 2.5rem 0 2rem;
+  border-radius: 0 0 24px 24px;
+  margin-bottom: 2rem;
+  background: var(--hero-gradient, linear-gradient(135deg, #334155, #0f172a));
+  color: #fff;
+}
+
+.store-hero .wrap {
+  padding-block: 0;
+}
+
+.store-hero-wrap {
+  max-width: 52rem;
+}
+
+.store-hero-title-row {
+  display: flex;
+  align-items: center;
+  gap: 1rem 1.25rem;
+  margin-bottom: 0.5rem;
+  flex-wrap: wrap;
+}
+
+.store-hero-title-row h1 {
+  margin: 0;
+  flex: 1 1 12rem;
+  min-width: 0;
+}
+
+.store-hero-thumb {
+  flex-shrink: 0;
+  width: clamp(4.5rem, 14vw, 6rem);
+  height: clamp(4.5rem, 14vw, 6rem);
+  border-radius: 18px;
+  object-fit: cover;
+  border: 2px solid rgba(255, 255, 255, 0.35);
+  box-shadow: 0 6px 24px rgba(0, 0, 0, 0.25);
+}
+
+.store-hero .badge {
+  display: inline-block;
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  opacity: 0.9;
+  margin-bottom: 0.75rem;
+}
+
+.store-hero .store-hero-title-row + .tagline {
+  margin-top: 0.35rem;
+}
+
+.store-hero h1 {
+  font-size: clamp(1.85rem, 4.5vw, 2.6rem);
+  letter-spacing: -0.03em;
+  line-height: 1.15;
+}
+
+.store-hero .tagline {
+  margin: 0;
+  font-size: 1.1rem;
+  opacity: 0.92;
+  max-width: min(40rem, 92vw);
+  line-height: 1.5;
+}
+
+.store-hero .accent-line {
+  margin-top: 1rem;
+  font-size: 0.95rem;
+  font-style: italic;
+  opacity: 0.85;
+}
+
+/* 히어로 하단 — 사장님 인터뷰(인용 강조) */
+.store-hero-boss-strip {
+  margin-top: 1.35rem;
+  padding: 0 0 1.75rem;
+}
+
+.store-hero-boss-strip__inner {
+  max-width: 52rem;
+  margin-inline: auto;
+  padding-inline: 1.25rem;
+}
+
+.store-hero-boss-strip__label {
+  margin: 0 0 0.55rem;
+  font-size: 0.72rem;
+  font-weight: 800;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: rgba(255, 255, 255, 0.92);
+}
+
+.store-hero-boss-strip__label .store-fictional-badge {
+  vertical-align: middle;
+}
+
+.store-hero-boss-strip__quote {
+  position: relative;
+  margin: 0;
+  padding: 1.1rem 1.25rem 1.2rem 2.5rem;
+  border-radius: 16px;
+  background: rgba(255, 255, 255, 0.16);
+  border: 1px solid rgba(255, 255, 255, 0.38);
+  box-shadow: 0 12px 32px rgba(0, 0, 0, 0.12);
+  backdrop-filter: blur(8px);
+}
+
+.store-hero-boss-strip__quote p {
+  margin: 0;
+  font-size: clamp(0.98rem, 2.2vw, 1.12rem);
+  line-height: 1.65;
+  font-weight: 500;
+  color: #fff;
+  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.12);
+}
+
+.store-hero-boss-strip__qmark {
+  position: absolute;
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: 2.75rem;
+  line-height: 1;
+  color: rgba(255, 255, 255, 0.55);
+  font-weight: 700;
+  left: 0.45rem;
+  top: 0.35rem;
+  pointer-events: none;
+}
+
+.store-hero-boss-strip__qmark--end {
+  left: auto;
+  right: 0.55rem;
+  top: auto;
+  bottom: 0.15rem;
+}
+
+.detail-grid {
+  display: grid;
+  gap: 1.5rem;
+}
+
+@media (min-width: 720px) {
+  .detail-grid {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+/* 점포 상세 — 좌우 균형(위는 안내·추천 / 메뉴·참고, 아래는 후기 전체 폭) */
+.detail-grid--store {
+  align-items: start;
+  grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+}
+
+.store-main-detail .detail-grid--store {
+  margin-bottom: 0;
+}
+
+.panel--store-info .store-picks-block {
+  margin-top: 1.1rem;
+}
+
+.panel--store-offer .store-ref-block {
+  margin-top: 1.15rem;
+  padding-top: 1rem;
+  border-top: 1px solid var(--panel-border, rgba(15, 23, 42, 0.08));
+}
+
+.store-reviews-section {
+  margin-top: 1.5rem;
+}
+
+.store-reviews-section-inner {
+  display: grid;
+  gap: 1.25rem;
+  margin-top: 0.85rem;
+}
+
+@media (min-width: 768px) {
+  .store-reviews-section-inner {
+    grid-template-columns: minmax(220px, 300px) minmax(0, 1fr);
+    align-items: start;
+    gap: 1.5rem;
+  }
+
+  .store-reviews-col-list {
+    padding-left: 1.35rem;
+    border-left: 1px solid var(--panel-border, rgba(15, 23, 42, 0.1));
+    min-height: 4rem;
+  }
+
+  .store-review-form {
+    border-bottom: none;
+    padding-bottom: 0;
+    margin-bottom: 0;
+  }
+}
+
+.store-reviews-list-heading {
+  margin: 0 0 0.55rem;
+  font-size: 0.72rem;
+  font-weight: 800;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  opacity: 0.5;
+}
+
+.store-reviews-col-form .store-reviews-lead {
+  margin-top: 0;
+}
+
+.panel {
+  background: var(--panel-bg, #fff);
+  border: 1px solid var(--panel-border, rgba(15, 23, 42, 0.08));
+  border-radius: var(--radius);
+  padding: 1.25rem 1.35rem;
+  box-shadow: var(--shadow);
+}
+
+.panel h3 {
+  margin: 0 0 0.75rem;
+  font-size: 0.8rem;
+  font-weight: 800;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  opacity: 0.55;
+}
+
+.panel dl {
+  margin: 0;
+  display: grid;
+  gap: 0.65rem;
+}
+
+.panel dt {
+  font-size: 0.78rem;
+  font-weight: 700;
+  opacity: 0.55;
+}
+
+.panel dd {
+  margin: 0.15rem 0 0;
+  font-size: 0.95rem;
+}
+
+.chips {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}
+
+.chip {
+  display: inline-block;
+  padding: 0.35rem 0.75rem;
+  font-size: 0.82rem;
+  font-weight: 600;
+  border-radius: 999px;
+  background: var(--chip-bg, rgba(15, 23, 42, 0.06));
+  color: var(--chip-text, inherit);
+}
+
+/* 점포 상세 — 안내 표 · 추천 카드 · 메뉴 카드 · 인터뷰 */
+.store-info-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 0.92rem;
+}
+.store-info-table th {
+  text-align: left;
+  vertical-align: top;
+  width: 7.25rem;
+  padding: 0.7rem 0.75rem 0.7rem 0;
+  font-size: 0.78rem;
+  font-weight: 700;
+  opacity: 0.55;
+  border-bottom: 1px solid var(--panel-border, rgba(15, 23, 42, 0.08));
+}
+.store-info-table td {
+  padding: 0.7rem 0;
+  border-bottom: 1px solid var(--panel-border, rgba(15, 23, 42, 0.08));
+  line-height: 1.55;
+}
+.store-info-table tr:last-child th,
+.store-info-table tr:last-child td {
+  border-bottom: none;
+}
+
+/* 안내 패널 — 사장님 인터뷰 */
+.store-boss-interview {
+  margin-top: 1.25rem;
+  padding-top: 1.25rem;
+  border-top: 1px solid var(--panel-border, rgba(15, 23, 42, 0.1));
+}
+.store-boss-interview__title {
+  margin: 0 0 0.85rem;
+  font-size: 0.8rem;
+  font-weight: 800;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  opacity: 0.55;
+}
+
+.store-boss-interview__title--with-whale,
+.store-boss-interview__title--with-home {
+  opacity: 1;
+  color: var(--text);
+}
+
+.store-boss-interview__title--with-whale .store-boss-interview__title-row,
+.store-boss-interview__title--with-home .store-boss-interview__title-row {
+  display: flex;
+  align-items: center;
+  gap: 0.55rem;
+  flex-wrap: wrap;
+}
+
+.store-boss-whale {
+  flex-shrink: 0;
+  line-height: 0;
+  color: var(--link, #457b9d);
+}
+
+.store-boss-whale__svg {
+  display: block;
+}
+
+.store-boss-home {
+  flex-shrink: 0;
+  line-height: 0;
+  color: var(--link, #2d6a4f);
+}
+
+.store-boss-home__svg {
+  display: block;
+}
+
+.store-boss-home__heart {
+  filter: drop-shadow(0 1px 1px rgba(0, 0, 0, 0.12));
+}
+
+.store-boss-interview__inner {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+@media (min-width: 560px) {
+  .store-boss-interview__inner {
+    flex-direction: row;
+    align-items: flex-start;
+    gap: 1.1rem;
+  }
+  .store-boss-interview__fig {
+    flex: 0 0 min(42%, 220px);
+    max-width: 220px;
+  }
+}
+.store-boss-interview__fig {
+  margin: 0;
+  border-radius: var(--radius, 12px);
+  overflow: hidden;
+  border: 1px solid var(--panel-border, rgba(15, 23, 42, 0.1));
+  box-shadow: var(--shadow);
+  background: rgba(15, 23, 42, 0.05);
+}
+.store-boss-interview__fig img {
+  display: block;
+  width: 100%;
+  height: auto;
+  aspect-ratio: 4 / 3;
+  object-fit: cover;
+  vertical-align: middle;
+}
+.store-boss-interview__fig figcaption {
+  padding: 0.4rem 0.65rem 0.55rem;
+  font-size: 0.78rem;
+  font-weight: 700;
+  opacity: 0.65;
+  text-align: center;
+  background: var(--chip-bg, rgba(15, 23, 42, 0.04));
+}
+.store-boss-interview__quote {
+  margin: 0;
+  flex: 1;
+  min-width: 0;
+  padding: 0;
+  border: none;
+}
+.store-boss-interview__quote p {
+  margin: 0;
+  font-size: 0.92rem;
+  line-height: 1.65;
+  opacity: 0.9;
+  padding: 0.15rem 0;
+  overflow: visible;
+  word-break: keep-all;
+  overflow-wrap: anywhere;
+}
+
+.store-panel-side {
+  align-self: start;
+}
+
+.chips:has(.store-point-card) {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 0.75rem;
+}
+@media (min-width: 560px) {
+  .chips:has(.store-point-card) {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+.store-point-card {
+  margin: 0;
+  padding: 0.85rem 1rem;
+  border-radius: var(--radius, 12px);
+  background: var(--chip-bg, rgba(15, 23, 42, 0.05));
+  border: 1px solid var(--panel-border, rgba(15, 23, 42, 0.08));
+}
+.store-point-card p {
+  margin: 0.45rem 0 0;
+  font-size: 0.88rem;
+  line-height: 1.45;
+  opacity: 0.92;
+}
+.store-point-tag {
+  display: inline-block;
+  font-size: 0.78rem;
+  font-weight: 800;
+  color: var(--link, #2563eb);
+  letter-spacing: -0.02em;
+}
+
+.store-reviews-lead {
+  margin: 0 0 1rem;
+  font-size: 0.85rem;
+  line-height: 1.5;
+  opacity: 0.75;
+}
+
+.store-review-form {
+  display: flex;
+  flex-direction: column;
+  gap: 0.6rem;
+  margin-bottom: 1.15rem;
+  padding-bottom: 1.1rem;
+  border-bottom: 1px solid var(--panel-border, rgba(15, 23, 42, 0.1));
+}
+
+.store-review-form input,
+.store-review-form textarea {
+  width: 100%;
+  box-sizing: border-box;
+  padding: 0.55rem 0.7rem;
+  font: inherit;
+  font-size: 0.9rem;
+  border-radius: 10px;
+  border: 1px solid var(--panel-border, rgba(15, 23, 42, 0.15));
+  background: var(--panel-bg, #fff);
+}
+
+.store-review-form textarea {
+  resize: vertical;
+  min-height: 4.5rem;
+}
+
+.store-review-submit {
+  align-self: flex-start;
+  padding: 0.45rem 1rem;
+  font: inherit;
+  font-size: 0.88rem;
+  font-weight: 700;
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+  color: #fff;
+  background: var(--link, #2563eb);
+}
+
+.store-review-submit:hover {
+  opacity: 0.92;
+}
+
+.store-review-msg {
+  margin: 0;
+  min-height: 1.25em;
+  font-size: 0.82rem;
+  color: var(--link, #2563eb);
+}
+
+.store-reviews-list {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+.store-reviews-empty,
+.store-reviews-error {
+  margin: 0;
+  font-size: 0.88rem;
+  opacity: 0.8;
+}
+
+.store-reviews-error {
+  color: #b45309;
+}
+
+.store-review-card {
+  padding: 0.85rem 1rem;
+  border-radius: var(--radius, 12px);
+  border: 1px solid var(--panel-border, rgba(15, 23, 42, 0.1));
+  background: var(--chip-bg, rgba(15, 23, 42, 0.04));
+}
+
+.store-review-card__head {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 0.35rem 0.75rem;
+  margin-bottom: 0.45rem;
+  font-size: 0.82rem;
+}
+
+.store-review-card__head time {
+  font-size: 0.75rem;
+  font-weight: 600;
+  opacity: 0.5;
+}
+
+.store-review-card__body {
+  margin: 0;
+  font-size: 0.9rem;
+  line-height: 1.55;
+  white-space: pre-wrap;
+}
+
+.store-picks-block {
+  margin-top: 1.25rem;
+  padding-top: 1.1rem;
+  border-top: 1px dashed var(--panel-border, rgba(15, 23, 42, 0.15));
+}
+
+.store-picks-title {
+  margin: 0 0 0.65rem;
+  font-size: 0.72rem;
+  font-weight: 800;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  opacity: 0.5;
+}
+
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}
+
+.chips:has(.store-menu-grid) {
+  display: block;
+}
+.store-menu-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 0.75rem;
+}
+@media (min-width: 520px) {
+  .store-menu-grid {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+.store-menu-card {
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  border-radius: var(--radius, 12px);
+  background: linear-gradient(
+    145deg,
+    rgba(255, 255, 255, 0.95),
+    var(--chip-bg, rgba(15, 23, 42, 0.04))
+  );
+  border: 1px solid var(--panel-border, rgba(15, 23, 42, 0.1));
+  box-shadow: 0 1px 0 rgba(255, 255, 255, 0.5) inset;
+}
+
+.store-menu-card:not(.store-menu-card--has-image) .store-menu-card__body {
+  padding: 1rem 1.1rem;
+}
+
+.store-menu-card--has-image .store-menu-card__media {
+  position: relative;
+  aspect-ratio: 16 / 10;
+  background: rgba(15, 23, 42, 0.06);
+}
+
+.store-menu-card--has-image .store-menu-card__media img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.store-menu-card--has-image .store-menu-card__body {
+  padding: 0.9rem 1rem 1rem;
+}
+
+.store-menu-card__body h4 {
+  margin: 0 0 0.4rem;
+  font-size: 0.98rem;
+  font-weight: 800;
+  letter-spacing: -0.02em;
+}
+.store-menu-card__body p {
+  margin: 0;
+  font-size: 0.85rem;
+  line-height: 1.45;
+  opacity: 0.88;
+}
+
+.store-interview-block {
+  margin-top: 1.75rem;
+}
+.store-section-title {
+  margin: 0 0 1rem;
+  font-size: 0.8rem;
+  font-weight: 800;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  opacity: 0.55;
+}
+.store-fictional-badge {
+  display: inline-block;
+  margin-left: 0.35rem;
+  padding: 0.15rem 0.45rem;
+  font-size: 0.65rem;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  text-transform: none;
+  border-radius: 6px;
+  background: rgba(234, 179, 8, 0.22);
+  color: #92400e;
+  vertical-align: middle;
+}
+.store-interview-grid {
+  display: grid;
+  gap: 1rem;
+}
+.store-interview-quote {
+  margin: 0;
+  padding: 1.1rem 1.25rem;
+  border-radius: var(--radius, 12px);
+  background: var(--panel-bg, #fff);
+  border: 1px solid var(--panel-border, rgba(15, 23, 42, 0.08));
+  box-shadow: var(--shadow);
+  border-left: 4px solid var(--link, #2563eb);
+}
+.store-interview-quote p {
+  margin: 0;
+  font-size: 0.92rem;
+  line-height: 1.6;
+  opacity: 0.9;
+}
+
+.site-footer {
+  margin-top: 3rem;
+  padding: 1.5rem 0 2rem;
+  font-size: 0.8rem;
+  opacity: 0.65;
+  border-top: 1px solid var(--border, rgba(15, 23, 42, 0.08));
+  text-align: center;
+}
+
+.ref-link {
+  display: inline-block;
+  margin-top: 0.75rem;
+  font-size: 0.85rem;
+}

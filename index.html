@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>로컬-V | 비봉면 상권 · 비봉고등학교 브이메이커</title>
+    <meta
+      name="description"
+      content="로컬-V: 비봉면 소상공인 디지털 전환. 비봉고 브이메이커가 학교 주변 8곳 점포의 맞춤 웹 페이지를 제공합니다."
+    />
+    <link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin />
+    <link rel="preconnect" href="https://images.unsplash.com" crossorigin />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable-dynamic-subset.min.css"
+    />
+    <link rel="stylesheet" href="css/base.css" />
+    <link rel="stylesheet" href="css/themes.css" />
+    <link rel="stylesheet" href="css/chat-widget.css" />
+    <link rel="stylesheet" href="css/food-marquee.css" />
+  </head>
+  <body class="hub">
+    <header class="site-header">
+      <div class="inner">
+        <a href="index.html" class="brand">로컬-V비봉상권 <span>소상공인 디지털 전환 웹 서비스</span></a>
+        <a href="vmaker.html" class="header-club-link">비봉고 브이메이커</a>
+      </div>
+    </header>
+
+    <!-- 음식 사진: Unsplash URL. 마퀴는 transform 스크롤이라 전부 eager 로드(지연 로딩은 깨짐 유발). -->
+    <section class="food-marquee-section" aria-label="음식 이미지 배너">
+      <div class="food-marquee">
+        <div class="food-marquee-track">
+          <div class="food-marquee-row">
+            <img
+              src="https://images.unsplash.com/photo-1565299624946-b28f40a0ae38?auto=format&fit=crop&w=520&q=75"
+              alt=""
+              width="260"
+              height="160"
+              loading="eager"
+              decoding="async"
+            />
+            <img
+              src="https://images.unsplash.com/photo-1590301157890-4810ed352733?auto=format&fit=crop&w=520&q=75"
+              alt=""
+              width="260"
+              height="160"
+              loading="eager"
+              decoding="async"
+            />
+            <img
+              src="https://images.unsplash.com/photo-1612874742237-6526221588e3?auto=format&fit=crop&w=520&q=75"
+              alt=""
+              width="260"
+              height="160"
+              loading="eager"
+              decoding="async"
+            />
+            
+            <img
+              src="https://images.unsplash.com/photo-1512621776951-a57141f2eefd?auto=format&fit=crop&w=520&q=75"
+              alt=""
+              width="260"
+              height="160"
+              loading="eager"
+              decoding="async"
+            />
+            <img
+              src="https://images.unsplash.com/photo-1495474472287-4d71bcdd2085?auto=format&fit=crop&w=520&q=75"
+              alt=""
+              width="260"
+              height="160"
+              loading="eager"
+              decoding="async"
+            />
+            <img
+              src="https://images.unsplash.com/photo-1579584425555-c3ce17fd4351?auto=format&fit=crop&w=520&q=75"
+              alt=""
+              width="260"
+              height="160"
+              loading="eager"
+              decoding="async"
+            />
+            
+          </div>
+          <div class="food-marquee-row" aria-hidden="true">
+            <img
+              src="https://images.unsplash.com/photo-1565299624946-b28f40a0ae38?auto=format&fit=crop&w=520&q=75"
+              alt=""
+              width="260"
+              height="160"
+              loading="eager"
+              decoding="async"
+            />
+            <img
+              src="https://images.unsplash.com/photo-1590301157890-4810ed352733?auto=format&fit=crop&w=520&q=75"
+              alt=""
+              width="260"
+              height="160"
+              loading="eager"
+              decoding="async"
+            />
+            <img
+              src="https://images.unsplash.com/photo-1612874742237-6526221588e3?auto=format&fit=crop&w=520&q=75"
+              alt=""
+              width="260"
+              height="160"
+              loading="eager"
+              decoding="async"
+            />
+            
+            <img
+              src="https://images.unsplash.com/photo-1512621776951-a57141f2eefd?auto=format&fit=crop&w=520&q=75"
+              alt=""
+              width="260"
+              height="160"
+              loading="eager"
+              decoding="async"
+            />
+            <img
+              src="https://images.unsplash.com/photo-1495474472287-4d71bcdd2085?auto=format&fit=crop&w=520&q=75"
+              alt=""
+              width="260"
+              height="160"
+              loading="eager"
+              decoding="async"
+            />
+            <img
+              src="https://images.unsplash.com/photo-1579584425555-c3ce17fd4351?auto=format&fit=crop&w=520&q=75"
+              alt=""
+              width="260"
+              height="160"
+              loading="eager"
+              decoding="async"
+            />
+           
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <main class="wrap">
+      <section class="hero hero--center">
+        <h1>비봉 상권 활성화 웹 서비스</h1>
+        <p class="lede">
+          <strong>로컬-V</strong>는 비봉고등학교 창업동아리 <strong>브이메이커</strong>가 기획한
+          비봉면 <strong>소상공인 디지털 전환</strong> 웹 서비스입니다. 학교 인근 식사·카페
+          <strong>8곳</strong>을 선정해, 매장마다 <strong>브랜드 톤이 다른 전용 화면</strong>으로
+          정보를 구조화했습니다. 대형 플랫폼·지도 검색에 묻히기 쉬운 동네 점포의
+          <strong>정체성과 메뉴</strong>를, 학생들의 <strong>현장 방문·요구 분석</strong>을 바탕으로
+          웹서비스를 구축하였습니다.
+        </p>
+        <p class="hero-insight">
+          오프라인 유입을 온라인으로 잇는 <strong>QR코드</strong>, 방문을 촉진하는
+          <strong>쿠폰·이벤트</strong>는 협력 상인과의 운영 합의에 따라 단계적으로 붙일
+          예정입니다. 지금 보시는 화면은 비봉면 상권이 스스로를 설명할 수 있는
+          <strong>1차 디지털 거점</strong>입니다.
+        </p>
+        <p class="disclaimer">
+          표기된 주소·전화·영업시간은 참고용입니다. 협력 점포 확정 후 반드시 상인 확인·동의를
+          거쳐 수정하세요. 다이닝코드 등 외부 링크는 출처 참고용입니다. 우측 하단 챗봇은 OpenAI
+          기반 안내로, 답변은 참고용이며 법적·영업 확약이 아닙니다.
+        </p>
+      </section>
+
+      <div id="store-grid" class="store-grid"></div>
+    </main>
+
+    <footer class="site-footer">
+      로컬-V 프로젝트 — 비봉면 상권 활성화 · 비봉고등학교 창업동아리 브이메이커 · 2026
+    </footer>
+
+    <div
+      id="chat-widget-panel"
+      class="chat-widget-panel"
+      role="dialog"
+      aria-label="로컬-V 챗봇"
+      aria-modal="false"
+    >
+      <div class="chat-widget-head">
+        <div>
+          <h2>로컬-V 안내</h2>
+          <p>비봉면 상권·맛집 질문을 도와드려요. (AI 답변 · 영업 정보는 매장 확인)</p>
+        </div>
+        <button type="button" id="chat-widget-close" class="chat-widget-close" aria-label="닫기">
+          ×
+        </button>
+      </div>
+      <div id="chat-widget-error" class="chat-widget-error" hidden></div>
+      <div id="chat-widget-messages" class="chat-widget-messages"></div>
+      <div class="chat-widget-foot">
+        <textarea
+          id="chat-widget-input"
+          rows="2"
+          placeholder="예: 비봉면에서 점심 뭐가 좋아?"
+          maxlength="2000"
+        ></textarea>
+        <button type="button" id="chat-widget-send" class="chat-widget-send">전송</button>
+      </div>
+    </div>
+    <button
+      type="button"
+      id="chat-widget-toggle"
+      class="chat-widget-toggle"
+      aria-label="챗봇 열기"
+      aria-expanded="false"
+      aria-controls="chat-widget-panel"
+    >
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+        <path
+          fill-rule="evenodd"
+          d="M4.848 2.771A49.144 49.144 0 0112 2.25c2.43 0 4.784.424 7.002 1.274l.002.001V9.25a8.25 8.25 0 01-4.326 7.251v2.965a.75.75 0 01-1.155.563l-2.718-2.035-1.443 1.443a.75.75 0 01-1.06 0L3.75 16.5v-4.563A8.25 8.25 0 014.848 9.25V4.771z"
+          clip-rule="evenodd"
+        />
+      </svg>
+    </button>
+
+    <script src="js/stores.js"></script>
+    <script src="js/home.js"></script>
+    <script src="js/chat-widget.js"></script>
+  </body>
+</html>

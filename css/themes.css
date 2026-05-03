@@ -1,0 +1,287 @@
+/* 상가별 비주얼 톤 — body에 theme 클래스 부여 */
+
+body.hub {
+  --bg: #f1f5f9;
+  --text: #0f172a;
+  --link: #1d4ed8;
+  --border: rgba(15, 23, 42, 0.08);
+  --brand: #0f172a;
+}
+
+/* 홈: 음식 마퀴와 히어로 제목 사이 여백 축소 */
+body.hub main.wrap {
+  padding-block: 1.1rem 3rem;
+}
+body.hub .hero {
+  padding-block: 1.25rem 2rem;
+}
+
+/* 1 옛날짜장짬뽕화성 — 복고 중식 */
+body.theme-yetnal-jjajang {
+  --bg: #fff7ed;
+  --text: #431407;
+  --link: #c2410c;
+  --border: rgba(194, 65, 12, 0.15);
+  --brand: #7c2d12;
+  --header-bg: rgba(255, 247, 237, 0.95);
+  --nav-pill-bg: rgba(251, 146, 60, 0.2);
+  --chip-bg: rgba(194, 65, 12, 0.12);
+  --hero-gradient: linear-gradient(145deg, #fb923c 0%, #c2410c 50%, #431407 100%);
+}
+.thumb-yetnal-jjajang {
+  background: linear-gradient(135deg, #fdba74, #9a3412);
+}
+
+/* 2 탕후마라탕 — 마라 레드(열정 포인트 강조) */
+body.theme-malatang {
+  --bg: #fff1f2;
+  --text: #450a0a;
+  --link: #dc2626;
+  --border: rgba(185, 28, 28, 0.2);
+  --brand: #7f1d1d;
+  --header-bg: rgba(255, 241, 242, 0.96);
+  --nav-pill-bg: rgba(248, 113, 113, 0.28);
+  --chip-bg: rgba(254, 202, 202, 0.55);
+  --panel-border: rgba(185, 28, 28, 0.16);
+  --shadow: 0 10px 40px rgba(185, 28, 28, 0.12);
+  --hero-gradient: linear-gradient(
+    155deg,
+    #fecaca 0%,
+    #f87171 28%,
+    #ef4444 52%,
+    #b91c1c 78%,
+    #450a0a 100%
+  );
+}
+.thumb-malatang {
+  background: linear-gradient(135deg, #f87171, #991b1b);
+}
+
+/* 3 우리스넥 — 파스텔 옐로·피치, 칠판 느낌 메뉴명 */
+body.theme-woori-snack {
+  --bg: #fff8ed;
+  --text: #5c3d1e;
+  --link: #d97706;
+  --border: rgba(251, 191, 36, 0.35);
+  --brand: #92400e;
+  --header-bg: rgba(255, 252, 245, 0.94);
+  --nav-pill-bg: rgba(254, 215, 170, 0.55);
+  --chip-bg: rgba(255, 237, 213, 0.85);
+  --panel-border: rgba(251, 146, 60, 0.22);
+  --panel-bg: #fffdfb;
+  --shadow: 0 12px 36px rgba(251, 191, 36, 0.14);
+  --hero-gradient: linear-gradient(
+    165deg,
+    #fffbeb 0%,
+    #ffedd5 28%,
+    #fed7aa 52%,
+    #fb923c 78%,
+    #c2410c 100%
+  );
+}
+.thumb-woori-snack {
+  background: linear-gradient(135deg, #fde68a, #ea580c);
+}
+
+body.theme-woori-snack .store-menu-card {
+  background: linear-gradient(168deg, #f0fdf4 0%, #ecfdf5 8%, #fffbeb 42%, #fff7ed 100%);
+  border-color: rgba(22, 163, 74, 0.12);
+}
+
+body.theme-woori-snack .store-menu-card__body h4 {
+  font-family: "Nanum Pen Script", "Segoe Print", "Comic Sans MS", cursive;
+  font-size: 1.45rem;
+  font-weight: 400;
+  letter-spacing: 0.03em;
+  color: #422006;
+  line-height: 1.25;
+}
+
+/* 4 달콤한 닭강정 — 메인 핑크 #FF4D6D 계열, 활기·달콤 */
+body.theme-dalkom-chicken {
+  --bg: #fff5f7;
+  --text: #5f0f24;
+  --link: #ff4d6d;
+  --border: rgba(255, 77, 109, 0.22);
+  --brand: #9d174d;
+  --header-bg: rgba(255, 245, 248, 0.96);
+  --nav-pill-bg: rgba(255, 143, 163, 0.35);
+  --chip-bg: rgba(255, 182, 193, 0.45);
+  --panel-border: rgba(255, 77, 109, 0.18);
+  --panel-bg: #fffafb;
+  --shadow: 0 14px 40px rgba(255, 77, 109, 0.15);
+  --hero-gradient: linear-gradient(
+    148deg,
+    #ffe4ec 0%,
+    #ffb3c6 22%,
+    #ff8fab 48%,
+    #ff4d6d 72%,
+    #c9184a 100%
+  );
+}
+.thumb-dalkom-chicken {
+  background: linear-gradient(135deg, #ff8fab, #ff4d6d);
+}
+
+/* 5 비룡짬뽕 — 메인 레드 #E63946 계열, 강렬·열정 */
+body.theme-biryong {
+  --bg: #fff5f5;
+  --text: #4c0519;
+  --link: #e63946;
+  --border: rgba(230, 57, 70, 0.22);
+  --brand: #7f1d1d;
+  --header-bg: rgba(255, 245, 245, 0.95);
+  --nav-pill-bg: rgba(252, 165, 165, 0.35);
+  --chip-bg: rgba(254, 202, 202, 0.55);
+  --panel-border: rgba(230, 57, 70, 0.18);
+  --panel-bg: #fffafa;
+  --shadow: 0 14px 42px rgba(230, 57, 70, 0.14);
+  --hero-gradient: linear-gradient(
+    152deg,
+    #fecaca 0%,
+    #f87171 26%,
+    #ef4444 52%,
+    #e63946 74%,
+    #7f1d1d 100%
+  );
+}
+.thumb-biryong {
+  background: linear-gradient(135deg, #f87171, #b91c1c);
+}
+
+/* 비룡 — 히어로 사장님 인용: 붓글씨 느낌 */
+body.theme-biryong .store-hero-boss-strip__label {
+  letter-spacing: 0.2em;
+}
+
+body.theme-biryong .store-hero-boss-strip__quote {
+  background: linear-gradient(145deg, rgba(76, 5, 25, 0.55), rgba(127, 29, 29, 0.45));
+  border: 2px solid rgba(255, 255, 255, 0.35);
+  box-shadow: 0 16px 40px rgba(0, 0, 0, 0.22), inset 0 1px 0 rgba(255, 255, 255, 0.12);
+}
+
+body.theme-biryong .store-hero-boss-strip__quote p {
+  font-family: "Black Han Sans", "Do Hyeon", "Malgun Gothic", sans-serif;
+  font-size: clamp(1.02rem, 2.6vw, 1.2rem);
+  font-weight: 400;
+  line-height: 1.75;
+  letter-spacing: -0.02em;
+  text-shadow: 0 2px 12px rgba(0, 0, 0, 0.35);
+}
+
+body.theme-biryong .store-hero-boss-strip__qmark {
+  color: rgba(254, 226, 226, 0.65);
+  font-size: 3.25rem;
+}
+
+/* 6 신당동식당 — 뚝배기·주황 포인트, 신뢰감 있는 깔끔한 톤 */
+body.theme-sindang {
+  --bg: #fffaf5;
+  --text: #431407;
+  --link: #ea580c;
+  --border: rgba(234, 88, 12, 0.14);
+  --brand: #7c2d12;
+  --header-bg: rgba(255, 252, 248, 0.97);
+  --nav-pill-bg: rgba(254, 215, 170, 0.55);
+  --chip-bg: rgba(255, 237, 213, 0.85);
+  --panel-border: rgba(234, 88, 12, 0.14);
+  --panel-bg: #ffffff;
+  --shadow: 0 10px 36px rgba(124, 45, 18, 0.08);
+  --hero-gradient: linear-gradient(
+    160deg,
+    #fff7ed 0%,
+    #ffedd5 22%,
+    #fdba74 48%,
+    #ea580c 76%,
+    #9a3412 100%
+  );
+}
+.thumb-sindang {
+  background: linear-gradient(135deg, #fed7aa, #c2410c);
+}
+
+body.theme-sindang .store-hero-boss-strip__label {
+  letter-spacing: 0.12em;
+  opacity: 0.95;
+}
+
+body.theme-sindang .store-hero-boss-strip__quote {
+  background: rgba(255, 255, 255, 0.2);
+  border: 1px solid rgba(255, 247, 237, 0.55);
+  box-shadow: 0 12px 32px rgba(67, 20, 7, 0.18), inset 0 1px 0 rgba(255, 255, 255, 0.25);
+  backdrop-filter: blur(10px);
+}
+
+body.theme-sindang .store-hero-boss-strip__quote p {
+  font-family: "Noto Serif KR", Georgia, "Times New Roman", serif;
+  font-size: clamp(1rem, 2.3vw, 1.14rem);
+  font-weight: 600;
+  line-height: 1.75;
+  letter-spacing: -0.01em;
+}
+
+body.theme-sindang .store-hero-boss-strip__qmark {
+  color: rgba(255, 237, 213, 0.75);
+  font-size: 2.85rem;
+}
+
+/* 7 고래밥상 — 메인 블루 #457B9D 계열, 시원·신뢰 */
+body.theme-gorae {
+  --bg: #f4f8fb;
+  --text: #1d3557;
+  --link: #457b9d;
+  --border: rgba(69, 123, 157, 0.2);
+  --brand: #1d3557;
+  --header-bg: rgba(244, 248, 251, 0.96);
+  --nav-pill-bg: rgba(168, 218, 220, 0.45);
+  --chip-bg: rgba(168, 218, 220, 0.35);
+  --panel-border: rgba(69, 123, 157, 0.16);
+  --panel-bg: #ffffff;
+  --shadow: 0 12px 36px rgba(29, 53, 87, 0.08);
+  --hero-gradient: linear-gradient(
+    158deg,
+    #e8f4f8 0%,
+    #a8dadc 32%,
+    #457b9d 62%,
+    #1d3557 100%
+  );
+}
+.thumb-gorae {
+  background: linear-gradient(135deg, #a8dadc, #1d3557);
+}
+
+body.theme-gorae .store-boss-whale {
+  color: var(--link);
+  filter: drop-shadow(0 2px 4px rgba(29, 53, 87, 0.2));
+}
+
+/* 8 해피홈피자 — 메인 그린 #2D6A4F 계열, 신선·건강 */
+body.theme-happy-pizza {
+  --bg: #f0faf5;
+  --text: #1b4332;
+  --link: #2d6a4f;
+  --border: rgba(45, 106, 79, 0.18);
+  --brand: #1b4332;
+  --header-bg: rgba(240, 250, 245, 0.96);
+  --nav-pill-bg: rgba(64, 145, 108, 0.22);
+  --chip-bg: rgba(116, 198, 157, 0.28);
+  --panel-border: rgba(45, 106, 79, 0.14);
+  --panel-bg: #ffffff;
+  --shadow: 0 12px 36px rgba(27, 67, 50, 0.08);
+  --hero-gradient: linear-gradient(
+    152deg,
+    #d8f3dc 0%,
+    #95d5b2 28%,
+    #52b788 55%,
+    #2d6a4f 82%,
+    #1b4332 100%
+  );
+}
+.thumb-happy-pizza {
+  background: linear-gradient(135deg, #95d5b2, #1b4332);
+}
+
+body.theme-happy-pizza .store-boss-home {
+  color: var(--link);
+  filter: drop-shadow(0 2px 5px rgba(27, 67, 50, 0.18));
+}
